@@ -1,0 +1,28 @@
+<% 
+    const $data = [
+        {
+            id:   "panel-navbar-dropdown-setting",
+            text: "تنظیمات",
+            icon: "settings",
+        },
+        {
+            id:   "panel-navbar-dropdown-giftcode",
+            text: "دریافت کد معرفی",
+            icon: "people",
+        },
+        {
+            id:   "panel-navbar-dropdown-logout",
+            text: "خروج از حساب",
+            icon: "logout",
+        },
+    ]
+%>
+
+<div id="panel-navbar-dropdown" class="w-48 px-4 absolute top-[110%] bg-white divide-gray-200 divide-y-[1px] rounded-xl overflow-hidden dropdownFading">
+    <% $data.forEach(item => { %>
+        <button class="w-full flex justify-between items-center py-4 last:text-red-500" id="<%= item.id %>">
+            <div class="text-sm font-medium"><%= item.text %></div>
+            <%- include("./../icon", {icon: item.icon, class: "w-5"}) %>
+        </button>
+    <% }) %>
+</div>

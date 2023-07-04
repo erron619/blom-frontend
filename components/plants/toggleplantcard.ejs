@@ -1,0 +1,22 @@
+<%
+    const _user_name = locals.name     || "نام پیشفرض";
+    const _fa_name   = locals.fa_name  || "گل کوکب";
+    const _eng_name  = locals.eng_name || "Dahlia pinnata";
+    const _group     = locals.group;
+    const _value     = locals.value;
+%>
+<button class="<%= _group %> relative group/mini rounded-xl overflow-hidden bg-gray-50 group/card ring-green-400 ring-0 open:ring-4 transition-all" value="<%= _value %>">
+    <div class="opacity-0 invisible group-open/mini:opacity-100 group-open/mini:visible transition-all absolute right-2 top-2 rounded-full bg-green-400 p-2 text-white">
+        <%- include("./../icon", { icon: "tick-fill", class: "w-5" }) %>
+    </div>
+    <div class="aspect-video w-full">
+        <img src="/images/card.png" alt="plant's card image">
+    </div>
+    <div class="px-4 py-2 space-y-2 text-right">
+        <div class="line-clamp-1 font-semibold group-hover/card:text-green-400 transition-all text-sm"><%= _user_name %></div>
+        <div class="text-xs text-gray-400">
+            <div><%= _fa_name %></div>
+            <div><%= _eng_name %></div>
+        </div>
+    </div>
+</button>

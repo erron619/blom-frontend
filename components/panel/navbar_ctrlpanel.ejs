@@ -1,0 +1,16 @@
+<div class="flex items-center gap-4 p-4">
+    <%# home %>
+    <a href="#" class="navbar-ctrlpanel-button">
+        <%- include("./../icon", {icon: "home-fill", class: "w-5"}) %>
+    </a>
+    <%# darkmode %>
+    <button id="panel-navbar-ctrlpanel-darkmode" class="navbar-ctrlpanel-button group/darkmode">
+        <%- include("./../icon", {icon: "moon-fill", class: "w-5 group-open/darkmode:hidden block"}) %>
+        <%- include("./../icon", {icon: "sun-fill",  class: "w-5 group-open/darkmode:block hidden"}) %>
+    </button>
+    <%# notifications %>
+    <button open id="panel-navbar-ctrlpanel-notifications" class="navbar-ctrlpanel-button group/notifs relative">
+        <%- include("./../icon", {icon: "bell-fill", class: "w-5"}) %>
+        <div class="group-open/notifs:block hidden absolute bottom-0 right-0 w-2 aspect-square rounded-full bg-red-500"></div>
+    </button>
+</div>

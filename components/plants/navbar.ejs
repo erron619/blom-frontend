@@ -1,0 +1,45 @@
+<%
+    const $grouping = [
+        {
+            id:    "all",
+            value: "all",
+            text:  "همه",
+        },
+        {
+            id:    "personal",
+            value: "personal",
+            text:  "شخصی",
+        },
+    ]
+    const $sorting = [
+        {
+            id:    "name",
+            value: "name",
+            text:  "نام",
+        },
+        {
+            id:    "date",
+            value: "date",
+            text:  "تاریخ",
+        },
+    ]
+%>
+<div class="flex justify-between items-center shrink-0">
+    <%# right %>
+    <div class="flex items-center gap-6">
+        <%- include("./navbar_radiobtn", {radio: $grouping, name: "grouping", text: "دسته بندی براساس"}) %>
+        <div class="h-6 w-0.5 bg-gray-200"></div>
+        <%- include("./navbar_radiobtn", {radio: $sorting, name: "sorting", text: "مرتب سازی براساس"}) %>
+    </div>
+    <%# left %>
+    <div class="flex items-center gap-2">
+        <button id="plants-newgroup-create" class="bg-green-400 text-white text-sm px-4 py-2 flex items-center gap-2 rounded-lg">
+            <%- include("./../icon", {icon: "group-add-fill", class: "w-4"}) %>
+            <div>ساختن گروه جدید</div>
+        </button>
+        <button id="plants-newplant-create" class="bg-green-400 text-white text-sm px-4 py-2 flex items-center gap-2 rounded-lg">
+            <%- include("./../icon", {icon: "group-add-fill", class: "w-4"}) %>
+            <div>افزودن گیاه جدید</div>
+        </button>
+    </div>
+</div>

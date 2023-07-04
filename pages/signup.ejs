@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<%- include(components+"html_head") %>
+<body>
+    <h1 class="hidden" id="signup-page">بلوم</h1>
+    <div class="page h-screen flex">
+        <div class="w-1/2 flex justify-center items-center">
+            <div id="signup-phase-handler" current="1" class="w-96 space-y-8">
+                <img class="w-fit mx-auto" src="/images/logo.png" alt="Blom logo">
+                <%# phase 1 --------------------- %>
+                <div id="signup-body-phase1" class="signup-phase" open="true">
+                    <div class="space-y-4">
+                        <h2 class="shrink-0 font-bold text-xl">ثبت نام در بلوم</h2>
+                        <p class="font-medium text-sm text-gray-400">
+                            برای ثبت نام لطفا ایمیل خود را وارد کنید
+                        </p>
+                    </div>
+                    <div id="signup-form-phase1" class="space-y-4 mx-auto">
+                        <%- include(components+"textbox",   {id: "signup-email", type:"email", icon: "phone", label: "ایمیل", name: "email", class: "w-full"}) %>
+                        <%- include(components+"texterror", {id: "signup-error-email"}) %>
+                        <%- include(components+"button",    {id: "signup-submit-phase1", text: "ثبت نام کن", class: "w-full justify-center mx-auto"}) %>
+                        <a href="/pages/login.html" class="link text-sm w-fit mx-auto block">در بلوم حساب دارید؟ وارد شوید</a>
+                    </div>
+                </div>
+                <%# phase 2 --------------------- %>
+                <div id="signup-body-phase2" class="signup-phase">
+                    <div class="space-y-4">
+                        <h2 class="shrink-0 font-bold text-xl">صحت سنجی ایمیل</h2>
+                        <p class="font-medium text-sm text-gray-400">
+                            لطفا کد 5 حرفی که به ایمیل شما ارسال شد را در کادر های زیر وارد کنید
+                        </p>
+                    </div>
+                    <div id="signup-form-phase2" class="space-y-8">
+                        <div class="space-y-4">
+                            <div dir="ltr" class="flex gap-4 items-center justify-center">
+                                <input id="signup-codefield-1" class="signup-codefield" maxlength="1" type="text" autocomplete="off">
+                                <input id="signup-codefield-2" class="signup-codefield" maxlength="1" type="text" autocomplete="off">
+                                <input id="signup-codefield-3" class="signup-codefield" maxlength="1" type="text" autocomplete="off">
+                                <input id="signup-codefield-4" class="signup-codefield" maxlength="1" type="text" autocomplete="off">
+                                <input id="signup-codefield-5" class="signup-codefield" maxlength="1" type="text" autocomplete="off">
+                                <input id="signup-codefield-sum" class="hidden" name="code" type="text">
+                            </div>
+                            <%- include(components+"texterror", {id: "signup-error-codefield"}) %>
+                            <button id="signup-resend-code" type="button" disabled class="link disabled:cursor-no-drop disabled:no-underline disabled:text-gray-400 text-sm block">کدی برای شما ارسال نشد؟ دوباره امتحان کنید در 02:00 دیگر...</button>
+                        </div>
+                        <%- include(components+"button",  {id: "signup-submit-phase2", text: "برسی کد", class: "w-1/2 justify-center"}) %>
+                    </div>
+                </div>
+                <%# phase 3 --------------------- %>
+                <div id="signup-body-phase3" class="signup-phase">
+                    <div class="space-y-4">
+                        <h2 class="shrink-0 font-bold text-xl">تکمیل ثبت نام</h2>
+                        <p class="font-medium text-sm text-gray-400">
+                            لطفا اطلاعات درخواست شده را در کادر های زیر وارد کنید
+                        </p>
+                    </div>
+                    <div id="signup-form-phase3" class="space-y-4">
+                        <%- include(components+"textbox",   {id: "signup-name", type:"text", icon: "phone", label: "نام", name: "name", class: "w-full"}) %>
+                        <%- include(components+"texterror", {id: "signup-error-name"}) %>
+
+                        <%- include(components+"textbox",   {id: "signup-phone", type:"tel", icon: "phone", label: "تلفن همراه", name: "phone", class: "w-full"}) %>
+                        <%- include(components+"texterror", {id: "signup-error-phone"}) %>
+
+                        <%- include(components+"textbox",   {id: "signup-password",        type:"password", icon: "phone", label: "رمز عبور",       class: "w-full", name: "password"}) %>
+                        <%- include(components+"textbox",   {id: "signup-passwordComfrim", type:"password", icon: "phone", label: "تایید رمز عبور", class: "w-full"}) %>
+                        <%- include(components+"texterror", {id: "signup-error-password"}) %>
+
+                        <%- include(components+"button", { id: "signup-submit-phase3", text: "بزن بریم!!", class: "w-full justify-center mx-auto"}) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-1/2 overflow-hidden relative group">
+            <div class="absolute inset-0 z-10 bg-gray-800 bg-opacity-50 group-hover:opacity-25 backdrop-blur-sm transition-all duration-1000"></div>
+            <img src="/images/signuplogin.jpg" alt="A hall full of plants" class="absolute bottom-0 w-full">
+        </div>
+    </div>
+</body>
+</html>

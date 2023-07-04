@@ -1,0 +1,14 @@
+<%
+    const _text  = locals.text || "این یک متن خطای پیشفرض است";
+    const _id    = locals.id   || Math.trunc(Math.random() * 1000);
+    const _open  = locals.open;
+    const _class = locals.class;
+
+    let __open = "";
+    if (_open) __open = `open="true"`;
+%>
+
+<div id="<%= _id %>" class="hidden open:flex items-center gap-1 text-red-500 <%= _class %>" <%= __open %>>
+    <%- include("./icon", {icon: "error-fill", class: "w-5 shrink-0"}) %>
+    <p class="text-sm"><%= _text %></p>
+</div>

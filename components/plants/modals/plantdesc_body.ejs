@@ -1,0 +1,52 @@
+<%
+    const $quick_data = [
+        {
+            id: "plants-plantdesc-modal-engname",
+            text: "نام علمی گیاه",
+        },
+        {
+            id: "plants-plantdesc-modal-faname",
+            text: "نام متداول گیاه",
+        },
+        {
+            id: "plants-plantdesc-modal-date",
+            text: "تاریخ ثبت در بلوم",
+        }
+    ]
+%>
+<div class="flex gap-4">
+    <div class="grow flex flex-col justify-between">
+        <%- include("./../../comfirmtextbox", {id: "plants-plantdesc-modal-name", value: "کوکب اصغر آقا"}) %>
+        <div class="space-y-2">
+            <% $quick_data.forEach(item => { %>
+                <div id="<%= item.id %>" class="w-full p-2 bg-gray-50 rounded-lg grid grid-cols-2 text-sm font-medium">
+                    <div><%= item.text %></div>
+                    <div class="text-gray-400"></div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+    <div class="shrink-0 aspect-video w-1/2 overflow-hidden rounded-lg">
+        <img class="w-full h-full" src="/images/card.png" alt="">
+    </div>
+</div>
+<div class="space-y-2">
+    <div class="text-gray-400 font-medium">
+        معرفی گیاه
+    </div>
+    <p id="plants-plantdesc-modal-desc" class="text-sm leading-loose">
+        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+    </p>
+</div>
+<div class="bg-gray-50 rounded-lg px-4 py-8 space-y-4">
+    <div class="flex justify-center items-center gap-2 text-green-400">
+        <img class="w-5" src="/images/spiral.svg" alt="">
+        <div class="font-semibold">
+            توصیه های <strong class="font-black">بلوم</strong> برای گیاه شما
+        </div>
+        <img class="w-5" src="/images/spiral.svg" alt="">
+    </div>
+    <p id="plants-plantdesc-modal-advices" class="text-sm text-gray-600 leading-loose font-medium">
+        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
+    </p>
+</div>

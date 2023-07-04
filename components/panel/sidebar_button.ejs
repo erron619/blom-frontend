@@ -1,0 +1,16 @@
+<%
+    const _icon = locals.icon || "flower";
+    const _text = locals.text || "لینک";
+    const _link = locals.link || "#";
+    const _open = locals.open;
+
+    let __open = "";
+    if (_open) __open = `open="true"`;
+%>
+<div <%= __open %> class="group/sdbrBtn flex items-center">
+    <div class="shrink-0 group-open/sdbrBtn:visible invisible h-10 w-2 bg-green-400 rounded-l-xl"></div>
+    <a class="h-14 w-14 group-open:grow mx-8 p-3 rounded-xl flex items-center gap-3 bg-white group-open/sdbrBtn:bg-green-100 text-gray-600 group-open/sdbrBtn:text-green-400 hover:bg-gray-100 font-semibold group-open/sdbrBtn:font-bold transition-all duration-300" href="<%= _link %>">
+        <%- include("./../icon", {icon: _icon, class: "h-full shrink-0"}) %>
+        <div class="group-open:visible invisible transition-all overflow-hidden whitespace-nowrap"><%= _text %></div>
+    </a>
+</div>

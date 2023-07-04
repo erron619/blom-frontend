@@ -1,0 +1,16 @@
+<%
+    const _type        = locals.type || "text";
+    const _id          = locals.id   || Math.trunc(Math.random() * 1000);
+    const _value       = locals.value
+    const _class       = locals.class;
+    const _name        = locals.name;
+    const _placeholder = locals.placeholder;
+%>
+
+<div id="<%= _id %>" class="group/comfirm relative z-0 flex flex-row-reverse rounded-xl font-IranSansX text-gray-800 h-14 border-[1px] border-gray-200 <%= _class %>">
+    <button class="aspect-square h-full flex justify-center items-center">
+        <%- include("./icon", {icon: "edit-line",    class: "block group-open/comfirm:hidden w-6 text-gray-400"}) %>
+        <%- include("./icon", {icon: "comfirm-line", class: "hidden group-open/comfirm:block w-6 text-green-400"}) %>
+    </button>
+    <input class="w-full h-full outline-none bg-transparent placeholder:text-gray-400 pr-4 no-autofill" disabled placeholder="<%= _placeholder %>" type="<%= _type %>" name="<%= _name %>" value="<%= _value %>">
+</div>

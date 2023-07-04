@@ -1,0 +1,15 @@
+<div id="panel-navbar" class="relative shrink-0 w-full bg-white dark:bg-gray-600 rounded-xl flex justify-between items-center select-none">
+    <%# right %>
+    <div>
+        <%- include("./navbar_ctrlpanel") %>
+    </div>
+    <%# left %>
+    <div class="flex items-center gap-5 p-4">
+        <%- include("./navbar_profile") %>
+        <div class="w-0.5 h-6 bg-gray-200"></div>
+        <%- include("./navbar_coins", {link: ""}) %>
+    </div>
+    <%# dropdown %>
+    <%- include("./navbar_dropdown") %>
+    <%- include("./navbar_notifications") %>
+</div>

@@ -1,0 +1,31 @@
+<%
+    const _title = locals.title || "تایتل پیشفرض";
+    const _id    = locals.id    || Math.trunc(Math.random() * 9999);
+    const _body  = body;
+    const _footer= footer;
+%>
+<div id="<%= _id %>" class="group/modal fixed inset-0 z-40 opacity-0 open:opacity-100 invisible open:visible flex justify-center items-center transition-all">
+    <div class="modalCloseBtn absolute inset-0 -z-10 bg-gray-800 opacity-50"></div>
+    <div class="-translate-y-4 group-open/modal:translate-y-0 transition-all duration-300 bg-white overflow-hidden rounded-xl w-[768px] h-4/5 p-6 flex flex-col gap-6">
+        <%# header %>
+        <div class="shrink-0 flex justify-between items-center">
+            <div class="font-bold"><%= _title %></div>
+            <button class="modalCloseBtn hover:text-red-500 transition-all">
+                <%- include("./icon", {icon: "close-line", class: "w-6"}) %>
+            </button>
+        </div>
+        <%# body %>
+        <div class="body grow overflow-y-auto scrollbar relative group/body">
+            <div class="absolute z-50 inset-0 group-open/body:hidden flex justify-center items-center bg-white">
+                <%- include("./loading", {color: "gray-400"}) %>
+            </div>
+            <div class="w-full space-y-8 group-open/body:block hidden">
+                <%- include(_body) %>
+            </div>
+        </div>
+        <%# footer %>
+        <div class="footer shrink-0 open:block hidden">
+            <%- include(_footer) %>
+        </div>
+    </div>
+</div>

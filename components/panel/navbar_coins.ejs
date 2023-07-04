@@ -1,0 +1,10 @@
+<%
+    const _link = locals.link || "#";
+%>
+<a id="panel-navbar-coins" class="flex items-center gap-4 font-bold" href="<%= _link %>">
+    <div class="text-green-400 flex gap-2 items-center">
+        <%- include("./../icon", {icon: "coin-fill", class: "w-6"}) %>
+        <div>امتیاز:</div>
+    </div>
+    <div class="text-gray-600">2260</div>
+</a>

@@ -1,0 +1,16 @@
+<div class="space-y-4">
+    <div class="text-gray-400 font-medium">
+        مشخصات گروه
+    </div>
+    <%- include("./../../textbox", {id: "plants-newgroup-modal-name", class: "w-1/2", label: "نام گیاه",}) %>
+</div>
+<div class="space-y-4">
+    <div class="text-gray-400 font-medium">
+        اعضای گروه
+    </div>
+    <div class="grid grid-cols-4 gap-4 p-1">
+        <% for( let i = 0; i < 8; i++ ) { %>
+            <%- include("./../toggleplantcard", {group: "plants-newgroup-modal-member", value: i}) %>
+        <% } %>
+    </div>
+</div>

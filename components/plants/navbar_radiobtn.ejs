@@ -1,0 +1,18 @@
+<%
+    const _text  = locals.text || "این یک متن پیشفرض است";
+    const _name  = locals.name || Math.trunc(Math.random() * 9999);
+    const _radio = locals.radio;
+%>
+<div class="flex items-center gap-2 text-sm select-none">
+    <div class="text-gray-400"><%= _text %></div>
+    <% _radio.forEach((item, index) => { %>
+        <%
+            let __checked = "";
+            if (index == 0) __checked = "checked=true";
+        %>
+        <div>
+            <input class="hidden peer" type="radio" name="<%= _name %>" id="plants-navbar-radiobtn-<%= _name %>-<%= item.id %>" value="<%= item.value %>" <%= __checked %>>
+            <label class="p-2 rounded-lg bg-transparent peer-checked:bg-green-400 hover:bg-gray-200 text-gray-600 peer-checked:text-white cursor-pointer" for="plants-navbar-radiobtn-<%= _name %>-<%= item.id %>"><%= item.text %></label>
+        </div>
+    <% }) %>
+</div>

@@ -1,0 +1,10 @@
+<%
+    const _name = locals.name || "گروه پیشفرض";
+%>
+<div class="flex gap-4 items-center text-gray-400 select-none">
+    <button class="shrink-0 group/tag flex gap-2 items-center">
+        <%- include("./../icon", {icon: "edit-line", class: "w-5 group-hover/tag:block hidden"}) %>
+        <div class="text-sm"><%= _name %></div>
+    </button>
+    <div class="h-0.5 grow bg-gray-200"></div>
+</div>

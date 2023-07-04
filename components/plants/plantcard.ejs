@@ -1,0 +1,18 @@
+<%
+    const _user_name = locals.name     || "نام پیشفرض";
+    const _fa_name   = locals.fa_name  || "گل کوکب";
+    const _eng_name  = locals.eng_name || "Dahlia pinnata";
+%>
+<button class="plantcard rounded-xl overflow-hidden bg-white group/card">
+    <div class="aspect-video w-full">
+        <img src="/images/card.png" alt="plant card's image">
+    </div>
+    <div class="p-4 space-y-2 text-right">
+        <div class="font-semibold group-hover/card:text-green-400 transition-all"><%= _user_name %></div>
+        <div class="flex gap-2 items-center text-sm text-gray-400">
+            <div><%= _fa_name %></div>
+            <div class="aspect-square w-1 rounded-full bg-gray-400"></div>
+            <div><%= _eng_name %></div>
+        </div>
+    </div>
+</button>

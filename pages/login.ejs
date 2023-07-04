@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<%- include(components+"html_head") %>
+<body>
+    <h1 id="login-page" class="hidden">بلوم</h1>
+    <div class="page h-screen flex">
+        <div class="w-1/2 flex justify-center items-center">
+            <div open="true" class="w-96 space-y-8">
+                <img class="w-fit mx-auto" src="/images/logo.png" alt="Blom logo">
+                <div class="space-y-8 pt-8">
+                    <div class="space-y-3">
+                        <h2 class="shrink-0 font-bold text-xl">ورود به بلوم</h2>
+                        <p class="font-medium text-sm text-gray-400">
+                            برای ورود به سامانه لطفا ایمیل و رمز عبور خود را وارد کنید
+                        </p>
+                    </div>
+                    <form id="login-form" method="post" action="https://blom.iran.liara.run/login/" class="space-y-3 mx-auto">
+                        <%- include(components+"textbox",   {id: "login-email", type:"email", icon: "phone", label: "ایمیل", name: "email", class: "w-full"}) %>
+                        <%- include(components+"texterror", {id: "login-error-email"}) %>
+                        <%- include(components+"textbox",   {id: "login-password", type:"password", icon: "phone", label: "رمز عبور", name: "password", class: "w-full"}) %>
+                        <%- include(components+"texterror", {id: "login-error-password"}) %>
+                        <%- include(components+"button",    {id: "login-submit", text: "بزن بریم!!", class: "w-full justify-center mx-auto"}) %>
+                        <a href="/pages/signup.html" class="link text-sm w-fit mx-auto block">حسابی در بلوم نداری؟ ثبت نام کن</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="w-1/2 overflow-hidden relative group">
+            <div class="absolute inset-0 z-10 bg-gray-800 bg-opacity-50 group-hover:opacity-25 backdrop-blur-sm transition-all duration-1000"></div>
+            <img src="/images/signuplogin.jpg" alt="A hall full of plants" class="absolute bottom-0 w-full">
+        </div>
+    </div>
+</body>
+</html>

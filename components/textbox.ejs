@@ -1,0 +1,22 @@
+<%
+    const _type        = locals.type || "text";
+    const _id          = locals.id   || Math.trunc(Math.random() * 1000);
+    const _value       = locals.value
+    const _class       = locals.class;
+    const _name        = locals.name;
+    const _icon        = locals.icon;
+    const _label       = locals.label;
+    const _placeholder = locals.placeholder;
+%>
+
+<div class="textbox group relative z-0 flex flex-row-reverse rounded-xl font-IranSansX text-gray-800 h-14 border-[1px] border-gray-200 <%= _class %>">
+    <% if (_label) { %>
+        <label class="cursor-text absolute -z-10 text-gray-400 group-open:text-gray-800 -translate-y-1/2 top-1/2 right-4 group-open:top-0 group-open:scale-75 transition-all bg-white px-2 font-medium" for="<%= _id %>"><%= _label %></label>
+    <% } %>
+    <% if (_icon) { %>
+        <label for="<%= _id %>" class="shrink-0 aspect-square h-full grid place-content-center">
+            <%- include("./icon", {icon: _icon, class: "w-6"}) %>
+        </label>
+    <% } %>
+    <input class="w-full h-full outline-none bg-transparent placeholder:text-gray-400 pr-4 no-autofill" placeholder="<%= _placeholder %>" type="<%= _type %>" name="<%= _name %>" id="<%= _id %>" value="<%= _value %>">
+</div>
